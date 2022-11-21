@@ -13,7 +13,7 @@ import           Control.Applicative
 #endif
 import           Control.Monad       (mzero)
 import           Data.Aeson
-import qualified Data.Text           as T
+import           Data.Aeson.Key      (fromString)
 
 -- TODO make this Hailgun specific and different for the Mailgun api. That way there is the correct
 -- separation of concerns.
@@ -28,7 +28,7 @@ toHailgunError = HailgunErrorResponse
 
 instance FromJSON HailgunErrorResponse where
    parseJSON (Object v) = HailgunErrorResponse
-      <$> v .: T.pack "message"
+      <$> v .: fromString "message"
    parseJSON _ = mzero
 
 serverError :: Either HailgunErrorResponse a
