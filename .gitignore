@@ -1,0 +1,18 @@
+# Temp Files
+*~
+.*.sw[a-p]
+
+# Build Files
+/.cabal-sandbox
+/cabal.sandbox.config
+/dist
+/.stack-work
+stack*.yaml.lock
+.DS_Store
+
+# Config File
+/hailgun.send.conf
+
+# Idea
+/.idea
+*.iml
